@@ -11,8 +11,7 @@ def index(request):
 
 @csrf_exempt
 def createArbol(request, nombre, apellido, dni):
-    print('sep')
-    print(request)
+    #print(request)
     if request.method == 'POST':
         try:
             censista = Censista.objects.get(dni=dni)
@@ -43,3 +42,9 @@ def createCensita(request, nombre, apellido, dni):
             return HttpResponse(form.errors)
     else:
         return HttpResponse('Error al crear el censista')
+
+def generateFiles(request):
+    if request.user.is_authenticated:
+        return HttpResponse("Hi user")
+    else:
+        return HttpResponse("nope")

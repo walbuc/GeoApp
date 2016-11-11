@@ -13,4 +13,4 @@ class ArbolForm(ModelForm):
         model = Arbol
         fields = ['censista', 'nroFrente', 'especie', 'estadoSanitario', 'inclinacion','ahuecamiento',
         'altInterCables', 'altInterLuminarias', 'danosAMuros', 'danosAVeredas', 'cazuela', 'distanciaEntrePlantas',
-        'distanciaAlMuro', 'podasAnteriores', 'circunferencia', 'observaciones', 'latitud', 'longitud', 'imagen']
+        'distanciaAlMuro', 'podasAnteriores', 'circunferencia', 'observaciones', 'latitud', 'longitud', 'imagen1','imagen2', 'imagen3']
