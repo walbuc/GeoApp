@@ -65,17 +65,17 @@ def writeToExcel(request):
             worksheet.write(row, col + 14, arbol.circunferencia)
             worksheet.write(row, col + 15, arbol.observaciones)
             worksheet.write(row, col + 16, arbol.tipoDeTransito)
-
-            imagenen1 = request.META['HTTP_HOST'] + arbol.imagen1.url if hasattr(arbol.imagen1, 'url') else "NO"
-            imagenen2 = request.META['HTTP_HOST'] + arbol.imagen2.url if hasattr(arbol.imagen2, 'url') else "NO"
-            imagenen3 = request.META['HTTP_HOST'] + arbol.imagen3.url if hasattr(arbol.imagen3, 'url') else "NO"
-            imagenen4 = request.META['HTTP_HOST'] + arbol.imagen4.url if hasattr(arbol.imagen4, 'url') else "NO"
-            imagenen5 = request.META['HTTP_HOST'] + arbol.imagen5.url if hasattr(arbol.imagen5, 'url') else "NO"
-            imagenen6 = request.META['HTTP_HOST'] + arbol.imagen6.url if hasattr(arbol.imagen6, 'url') else "NO"
-            imagenen7 = request.META['HTTP_HOST'] + arbol.imagen7.url if hasattr(arbol.imagen7, 'url') else "NO"
-            imagenen8 = request.META['HTTP_HOST'] + arbol.imagen8.url if hasattr(arbol.imagen8, 'url') else "NO"
-            imagenen9 = request.META['HTTP_HOST'] + arbol.imagen9.url if hasattr(arbol.imagen9, 'url') else "NO"
-            imagenen10 = request.META['HTTP_HOST'] +  arbol.imagen10.url if hasattr(arbol.imagen10, 'url') else "NO"
+            http = "http://"
+            imagenen1 = http + request.META['HTTP_HOST'] + arbol.imagen1.url if hasattr(arbol.imagen1, 'url') else "NO"
+            imagenen2 = http + request.META['HTTP_HOST'] + arbol.imagen2.url if hasattr(arbol.imagen2, 'url') else "NO"
+            imagenen3 = http + request.META['HTTP_HOST'] + arbol.imagen3.url if hasattr(arbol.imagen3, 'url') else "NO"
+            imagenen4 = http + request.META['HTTP_HOST'] + arbol.imagen4.url if hasattr(arbol.imagen4, 'url') else "NO"
+            imagenen5 = http + request.META['HTTP_HOST'] + arbol.imagen5.url if hasattr(arbol.imagen5, 'url') else "NO"
+            imagenen6 = http + request.META['HTTP_HOST'] + arbol.imagen6.url if hasattr(arbol.imagen6, 'url') else "NO"
+            imagenen7 = http + request.META['HTTP_HOST'] + arbol.imagen7.url if hasattr(arbol.imagen7, 'url') else "NO"
+            imagenen8 = http + request.META['HTTP_HOST'] + arbol.imagen8.url if hasattr(arbol.imagen8, 'url') else "NO"
+            imagenen9 = http + request.META['HTTP_HOST'] + arbol.imagen9.url if hasattr(arbol.imagen9, 'url') else "NO"
+            imagenen10 = http + request.META['HTTP_HOST'] +  arbol.imagen10.url if hasattr(arbol.imagen10, 'url') else "NO"
 
             worksheet.write(row, col + 17, imagenen1)
             worksheet.write(row, col + 18, imagenen2)
