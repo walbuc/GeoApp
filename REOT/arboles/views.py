@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from arboles.models import Arbol, Censista
 from arboles.forms import CensistaForm, ArbolForm
 from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -24,11 +25,12 @@ def createArbol(request, nombre, apellido, dni):
         if form.is_valid():
             # file is saved
             form.save()
-            return  HttpResponse('Arbol creado')
+            return  JsonResponse({'success': True,'message':'Arbol creado'})
         else:
-            return HttpResponse(form.errors)
+
+            return JsonResponse({'success': False, 'errors':form.errors.as_json()})
     else:
-        return HttpResponse('Error al crear el arbol')
+        return JsonResponse({'success': False, 'message':'Error al crear el arbol'})
 
 @csrf_exempt
 def createCensita(request, nombre, apellido, dni):
@@ -37,14 +39,8 @@ def createCensita(request, nombre, apellido, dni):
         form = CensistaForm(data)
         if form.is_valid():
             form.save()
-            return HttpResponse('Se creo el censista correctamente')
+            return JsonResponse({success: True, 'message':'Se creo el censista correctamente'})
         else:
-            return HttpResponse(form.errors)
+            return JsonResponse({success: False, 'message':'Error al crear el censista', 'errors':form.errors.as_json()})
     else:
-        return HttpResponse('Error al crear el censista')
-
-def generateFiles(request):
-    if request.user.is_authenticated:
-        return HttpResponse("Hi user")
-    else:
-        return HttpResponse("nope")
+        return JsonResponse({success: False, 'message':'Error al crear el censista'})

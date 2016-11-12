@@ -13,15 +13,15 @@ class Arbol(models.Model):
     class Meta:
         verbose_name_plural = "Arboles"
     censista = models.ForeignKey(Censista, on_delete=models.CASCADE)
-    calle = models.CharField(max_length=200, null=True)
+    calle = models.CharField(max_length=200, null=True, blank=True)
     anchoVereda = models.FloatField(blank= True, null=True)
     vereda_opt = (
     ('NO', 'NO'),
     ('PAR', 'PAR'),
     ('IMPAR', 'IMPAR'),)
-    vereda = models.CharField(choices=vereda_opt, max_length=3, null=True)
+    vereda = models.CharField(choices=vereda_opt, max_length=3, null=True, blank=True, default='NO')
     nroFrente = models.IntegerField(blank=True, null=True)
-    nroArbol = models.IntegerField()
+    nroArbol = models.IntegerField(null=True)
     especie = models.CharField(max_length=200, blank=True, null=True)
     # S E D M
     estado_opt = (

@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
             name='Arbol',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('calle', models.CharField(max_length=200, null=True)),
+                ('calle', models.CharField(max_length=200, null=True, blank=True)),
                 ('anchoVereda', models.FloatField(null=True, blank=True)),
                 ('vereda', models.CharField(max_length=3, null=True, choices=[(b'NO', b'NO'), (b'PAR', b'PAR'), (b'IMPAR', b'IMPAR')])),
                 ('nroFrente', models.IntegerField(null=True, blank=True)),
