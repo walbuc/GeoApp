@@ -67,7 +67,7 @@ class Arbol(models.Model):
     observaciones = models.CharField(max_length=400, blank=True, null=True)
     latitud = models.CharField('Latitud', max_length=200)
     longitud = models.CharField('Longitud', max_length=400)
-    imagen1 = models.FileField(upload_to='uploads/')
+    imagen1 = models.FileField(upload_to='uploads/',blank=True, null=True)
     imagen2 = models.FileField(upload_to='uploads/', blank=True, null=True)
     imagen3 = models.FileField(upload_to='uploads/', blank=True, null=True)
     imagen4 = models.FileField(upload_to='uploads/', blank=True, null=True)
