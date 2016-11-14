@@ -61,13 +61,13 @@ class Arbol(models.Model):
     podas_opt = (
     ('NO', 'NO'),
     ('L', 'L'),
-    ('S ', 'S'),)
+    ('S', 'S'),)
     podasAnteriores = models.CharField(choices= podas_opt, max_length=2, blank=True, null=True)
     circunferencia = models.FloatField(blank=True, null=True)
     observaciones = models.CharField(max_length=400, blank=True, null=True)
     latitud = models.CharField('Latitud', max_length=200)
     longitud = models.CharField('Longitud', max_length=400)
-    imagen1 = models.FileField(upload_to='uploads/',blank=True, null=True)
+    imagen1 = models.FileField(upload_to='uploads/')
     imagen2 = models.FileField(upload_to='uploads/', blank=True, null=True)
     imagen3 = models.FileField(upload_to='uploads/', blank=True, null=True)
     imagen4 = models.FileField(upload_to='uploads/', blank=True, null=True)
