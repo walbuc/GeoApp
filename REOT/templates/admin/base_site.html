@@ -1,9 +1,4 @@
 {% extends "admin/base.html" %}
-
-{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
-
-{% block branding %}
-<h1 id="site-name"><a href="{% url 'admin:index' %}">R E O T</a></h1>
+{% block page_title %}
+  <a href="/" class="page-title">{% block brand-logo %}R E O T{% endblock %}</a>
 {% endblock %}
-
-{% block nav-global %}{% endblock %}
